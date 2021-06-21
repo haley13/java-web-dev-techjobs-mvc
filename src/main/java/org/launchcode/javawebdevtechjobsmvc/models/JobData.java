@@ -62,7 +62,7 @@ public class JobData {
 
         if (column.equals("all")){
             jobs = findByValue(value);
-            return jobs;
+            return jobs;//this is for the searching in the
         }
         for (Job job : allJobs) {
 

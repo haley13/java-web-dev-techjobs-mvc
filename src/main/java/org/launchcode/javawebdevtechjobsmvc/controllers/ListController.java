@@ -28,6 +28,8 @@ public class ListController {
         columnChoices.put("positionType", "Position Type");
         columnChoices.put("coreCompetency", "Skill");
 
+        tableChoices.put("all",JobData.findAll());//I'm confused about the key, is it going to be from the JobData class, the other methods are,
+        //I need to shift the table over to the left.
         tableChoices.put("employer", JobData.getAllEmployers());
         tableChoices.put("location", JobData.getAllLocations());
         tableChoices.put("positionType", JobData.getAllPositionTypes());
@@ -58,6 +60,6 @@ public class ListController {
         }
         model.addAttribute("jobs", jobs);
 
-        return "list-jobs";
+        return "list-jobs";//renders this after receiving and organizing the data
     }
 }
