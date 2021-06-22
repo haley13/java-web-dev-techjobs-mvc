@@ -28,8 +28,8 @@ public class ListController {
         columnChoices.put("positionType", "Position Type");
         columnChoices.put("coreCompetency", "Skill");
 
-        tableChoices.put("all",JobData.findAll());//I'm confused about the key, is it going to be from the JobData class, the other methods are,
-        //I need to shift the table over to the left.
+        //tableChoices is how the links are generated, what I'm not clear on is the loop through categories
+        //tableChoices.put("all",JobData.findAll());
         tableChoices.put("employer", JobData.getAllEmployers());
         tableChoices.put("location", JobData.getAllLocations());
         tableChoices.put("positionType", JobData.getAllPositionTypes());
@@ -53,7 +53,7 @@ public class ListController {
         ArrayList<Job> jobs;
         if (column.toLowerCase().equals("all")){
             jobs = JobData.findAll();
-            model.addAttribute("title", "All Jobs");
+            model.addAttribute("title", "View Jobs");
         } else {
             jobs = JobData.findByColumnAndValue(column, value);
             model.addAttribute("title", "Jobs with " + columnChoices.get(column) + ": " + value);
